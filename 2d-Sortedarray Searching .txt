@@ -1,3 +1,4 @@
+//by 1st row last column//
 import java.util.*;
 public class sorted2Darray_search {
     public static boolean sortsearch(int matrix[][],int key) {
@@ -24,6 +25,36 @@ public class sorted2Darray_search {
                         {13,14,15,16}};
     sortsearch(matrix,11);
 
+    }
+}
+//best time complexity for finding element from sorted order 2D array.
+
+
+//by last row and 1st column//
+import java.util.*;
+public class sorted2Darray_search {
+    public static boolean sortsearch(int matrix[][],int key) {
+        int row= matrix.length-1,col=0;
+                while(row>=0&&col<= matrix[0].length-1){
+                    if (matrix[row][col]==key){
+                        System.out.println("found at location:("+row+","+col+")");
+                        return true;
+                    } else if (key<matrix[row][col]) {
+                        row--;
+                    }
+                    else {
+                        col++;
+                    }
+                }
+        System.out.println("Element Not found ");
+                return false;
+    }
+    public static void main(String[] args) {
+        int matrix[][]={{1,2,3,4},
+                        {5,6,7,8},
+                        {9,10,11,12},
+                        {13,14,15,16}};
+    sortsearch(matrix,11);
     }
 }
 //best time complexity for finding element from sorted order 2D array.
