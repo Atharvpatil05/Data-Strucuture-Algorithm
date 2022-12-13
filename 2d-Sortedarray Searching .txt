@@ -1,0 +1,29 @@
+import java.util.*;
+public class sorted2Darray_search {
+    public static boolean sortsearch(int matrix[][],int key) {
+        int row=0,colm= matrix[0].length-1;
+        while(row<matrix.length&&colm>=0){
+
+            if (matrix[row][colm]==key){
+                System.out.println("Found at location:("+row+","+colm+")");
+                return true;
+            } else if (key<matrix[row][colm]) {
+                colm--;
+            }
+            else {
+                row++;
+            }
+        }
+        System.out.println("Element not found");
+        return false;
+}
+    public static void main(String[] args) {
+        int matrix[][]={{1,2,3,4},
+                        {5,6,7,8},
+                        {9,10,11,12},
+                        {13,14,15,16}};
+    sortsearch(matrix,11);
+
+    }
+}
+//best time complexity for finding element from sorted order 2D array.
