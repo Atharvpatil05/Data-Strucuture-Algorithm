@@ -1,0 +1,29 @@
+import java.util.*;
+public class anagramsString {
+    public static void main(String[] args) {
+        String str1 = "earth";
+        String str2 = "heart";
+
+        str1 = str1.toLowerCase();//1st we convert Strings to lowecase for become easier to compare
+        str2 = str2.toLowerCase();//1st we convert Strings to lowecase for become easier to compare
+
+        if (str1.length() == str2.length())/*then we compare length of an if equals then only we carry otherwise we stop*/{
+
+        char[]str1tochar=str1.toCharArray();//converting string to char arrays for using inbuild functions which are useful in this program
+        char[]str2tochar=str2.toCharArray();//converting string to char arrays for using inbuild functions which are useful in this program
+
+        Arrays.sort(str1tochar);//then we sort string lexicographically for comparing
+        Arrays.sort(str2tochar);//then we sort string lexicographically for comparing
+
+        if (Arrays.equals(str1tochar,str2tochar))/*if two strings are equals then it is anagrams otherwise notß*/{
+            System.out.println(str1+" "+str2+" "+"are anagrams");
+        }else{
+            System.out.println(str1+" "+str2+" "+"are not an anagrams");
+        }
+        }
+        else{
+            System.out.println("not anagrams");
+        }
+    }
+}
+//anagrams menas if the worlds in two strings are equals even after they are not in sequence//
