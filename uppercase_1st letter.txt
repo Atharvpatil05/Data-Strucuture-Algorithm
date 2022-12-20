@@ -1,0 +1,22 @@
+//Making each first letter to upper case
+public class upperclass1stletter {
+    public static String touppercase(String str) {
+        StringBuilder ap=new StringBuilder("");
+        char ch=Character.toUpperCase(str.charAt(0));
+        ap.append(ch);
+         for (int i=1;i<str.length();i++){
+            if (str.charAt(i)==' ' && i<str.length()-1){
+                ap.append(str.charAt(i));
+                i++;
+                ap.append(Character.toUpperCase(str.charAt(i)));
+            }else{
+                ap.append(str.charAt(i));
+            }
+         }
+        return ap.toString();
+    }
+    public static void main(String[] args) {
+        String str="my name is atharv vijay patil";
+        System.out.println(touppercase(str));
+    }
+}

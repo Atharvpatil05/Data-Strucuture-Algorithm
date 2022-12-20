@@ -1,0 +1,27 @@
+//find shortest path by directions
+public class find_shortest_path_bydirection {
+    public static int fsp(String dir) {
+        int x=0,y=0;
+        for (int i=0;i<dir.length();i++){
+            char path=dir.charAt(i);
+            if (path=='e'){
+                x++;
+            } else if(path=='n') {
+                y++;
+            } else if (path=='w') {
+                x--;
+            }
+            else{
+                y--;
+            }
+        }
+        int x2=x*x;
+        int y2=y*y;
+        return (int)Math.sqrt(x2+y2);
+    }
+    public static void main(String[] args) {
+        String dir="ewns";
+        System.out.println(fsp(dir));
+    }
+}
+// In this questions direction are given by this we can find shortest path menas displacement
