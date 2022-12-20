@@ -1,4 +1,3 @@
-//Making each first letter to upper case
 public class upperclass1stletter {
     public static String touppercase(String str) {
         StringBuilder ap=new StringBuilder("");
@@ -6,9 +5,9 @@ public class upperclass1stletter {
         ap.append(ch);
          for (int i=1;i<str.length();i++){
             if (str.charAt(i)==' ' && i<str.length()-1){
-                ap.append(str.charAt(i));
-                i++;
-                ap.append(Character.toUpperCase(str.charAt(i)));
+                ap.append(str.charAt(i));//in this codeline we append(join) space ' ' in line
+                i++; //after appending space we can just do i++ because after ' ' there is new world.we just go on we world by i++
+                ap.append(Character.toUpperCase(str.charAt(i))); //in this line we just capital 1st letter and append it
             }else{
                 ap.append(str.charAt(i));
             }
