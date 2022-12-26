@@ -1,0 +1,20 @@
+public class optimize_power {
+    public static int optimizepow(int num,int n) {
+        if (n==0){      //base condition is power is 0 then simply return 1
+            return 1;
+        }
+        int poww2=optimizepow(num,n/2); // we can take half power and find power and store it
+        int poww=poww2*poww2;  //then simply multiply it with stored variable twicwlt
+
+        if (num%2!=0){
+            poww=num*poww;  //if number is odd then we just number by poww
+        }
+        return poww;
+    }
+    public static void main(String[] args) {
+        int num=5;
+        int n=3;
+        System.out.println(optimizepow(num,n));
+    }
+}
+// In This Problem We Optimize Code By Taking Half Power And After Finding Power We Just Multiply It By This We Get Time Complexity O(log N).

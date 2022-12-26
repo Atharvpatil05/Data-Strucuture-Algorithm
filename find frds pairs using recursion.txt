@@ -1,0 +1,18 @@
+public class frdspair {
+    public static int friendpair(int n) {
+        if (n==0||n==1){
+            return 1;
+        }
+        int fpn1=friendpair(n-1);// single pairs
+        int fpn2=friendpair(n-2);//double pairs
+
+        int pair=(n-1)*fpn2;
+        int total=fpn1+pair;
+
+        return total;
+    }
+    public static void main(String[] args) {
+        int n=3;
+        System.out.println(friendpair(n));
+    }
+}

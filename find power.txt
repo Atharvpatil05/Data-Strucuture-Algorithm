@@ -1,0 +1,15 @@
+public class findpower {
+    public static int poww(int num,int power) {
+        if (power==0){
+            return 1;
+        }
+       int xnm1=poww(num, power-1);
+       int xn=num*xnm1;
+       return xn;
+    }
+    public static void main(String[] args) {
+        int num=5;
+        int power=2;
+        System.out.print(poww(num,power));
+    }
+}

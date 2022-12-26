@@ -1,0 +1,18 @@
+public class isarrsorted {
+    public static boolean isorted(int arr[],int i) {
+        if (i==arr.length-1){ // if we succesfully go to last index without any problem then array is sorted else not sorted
+            return true;
+        }
+        if (arr[i]>arr[i+1]){   //if index i is greater than index at i+1 then array is not sorted
+            return false;
+        }
+        return isorted(arr,i+1);
+
+    }
+    public static void main(String[] args) {
+        int arr[]={1,2,3,4,5};
+        int i=0;
+        System.out.println(isorted(arr,i));
+    }
+}
+//In This Problem We Simply Check Arrray Element Are Sorted Or Not

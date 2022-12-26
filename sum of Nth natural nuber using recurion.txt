@@ -1,0 +1,13 @@
+public class sum1stnaturalnum {
+    public static int natsum(int n) {
+        if (n==1 || n==0){
+            return n;
+        }
+        int sum=n+natsum(n-1);
+        return sum;
+    }
+    public static void main(String[] args) {
+        int n=0;
+        System.out.println(natsum(n));
+    }
+}

@@ -1,0 +1,18 @@
+public class find_index1st_occurence {
+    public static int findindex(int arr[],int index,int key) {
+        if (index==arr.length){  //if index is at arr.length then number is not present
+            return -1;
+        }
+        if (arr[index]==key){
+            return index;
+        }
+        return findindex(arr,index+1,key);//we simply index by i+1
+    }
+    public static void main(String[] args) {
+        int arr[]={1,3,4,5,7,5,4,6,7,8,5};
+        int index=0;
+        int key=50;
+        System.out.println("First Occurence of Index is : "+findindex(arr,index,key));
+    }
+}
+//In This Problem We Have To Find The Index Of Given Number

@@ -1,0 +1,21 @@
+public class remove_duplicatestring {
+    public static void remove_duplicate(String str,int index,StringBuilder newstr,boolean map[]) {
+        if (index==str.length()){ //base condition:if str go to atlast of string then Work is done
+            System.out.println(newstr);
+            return;
+        }
+        char currchar=str.charAt(index);
+        if (map[currchar-'a']==true){       //in this line we just check that char is already present or not in string
+            remove_duplicate(str,index+1,newstr,map);
+        }else {
+            map[currchar-'a']=true;  //if char is not repaeat in this case char is not present in string then allocate true in map string
+            remove_duplicate(str,index+1,newstr.append(currchar),map);  //and we just add that char to newstr
+        }
+    }
+    public static void main(String[] args) {
+        String str="atharv";
+        int index=0;
+        remove_duplicate(str,index,new StringBuilder(),new boolean[26]);
+    }
+}
+//in this problem we remove repeated characters from string

@@ -1,0 +1,18 @@
+public class find_indexlast_occurence {
+    public static int findindex(int arr[],int index,int key) {
+        if (index==0){ //if index==0 then there is no number present
+            return -1;
+        }
+        if (arr[index]==key){
+            return index;
+        }
+        return findindex(arr,index-1,key);      //in this question we find index from last and we decrese index by i-1
+    }
+    public static void main(String[] args) {
+        int arr[]={1,3,4,5,7,5,4,6,7,8,5};
+        int index= arr.length-1;
+        int key=70;
+        System.out.println("last Occurence of Index is : "+findindex(arr,index,key));
+    }
+}
+//In This Problem We Have To Find The Index Of Given Number from last
