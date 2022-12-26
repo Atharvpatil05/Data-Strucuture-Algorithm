@@ -1,0 +1,16 @@
+public class numtoword {
+    static String[]number={"zero","one","two","three","four","five","six","seven","eight","nine"};
+    public static void tonum(int num) {
+        if (num==0){
+            return;
+        }
+        int lastdigit=num%10;
+        tonum(num/10);
+        System.out.print(number[lastdigit]+" ");
+    }
+    public static void main(String[] args) {
+        int num=2019;
+        tonum(num);
+    }
+}
+// 2019

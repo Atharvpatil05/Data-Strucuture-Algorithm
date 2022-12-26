@@ -1,0 +1,14 @@
+public class finding_string_length {
+    public static int length(String str) {
+        if (str.length()==0){
+            return 0;
+        }
+        return length(str.substring(1))+1;
+    }
+    public static void main(String[] args) {
+       String str="atharv vijay patil";
+        int length=0;
+        System.out.println(length(str));
+        //System.out.println(str.length());
+    }
+}
