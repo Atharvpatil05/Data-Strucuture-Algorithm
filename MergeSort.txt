@@ -1,0 +1,51 @@
+public class merge_sort {  // for printing array
+    public static void prtarr(int arr[]) {
+        for (int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+    }
+
+    public static void mergesort(int arr[],int si,int ei) {
+        if (si>=ei){
+            return;
+        }
+        int mid=si+(ei-si)/2; //findng mid
+        // in below two lines we divide array into smaller array
+        mergesort(arr,si,mid);//left
+        mergesort(arr,mid+1,ei);//right
+        merge(arr,si,mid,ei);
+    }
+
+    public static void merge(int arr[],int si,int mid,int ei) {
+        int temp[]=new int[ei-si+1];  // creating tempory array for saving sorted ele [ei-si+1] this is best formula for finding size of temp arr 6-0+1
+        int i=si;       // for 1st sorted part
+        int j=mid+1;    // for 2nd sorted part
+        int k=0;        //for temp
+
+        while (i<=mid && j<= ei) {
+            if (arr[i] < arr[j]) { //checking index of 1st and 2nd array if i ig grater then we add it to new array
+                temp[k] = arr[i];
+                i++;
+            }else {
+                temp[k]=arr[j]; //checking index of 1st and 2nd array if i ig grater then we add it to new array
+                j++;
+            }
+            k++;// at both case we need to increment k
+        }
+        while(i<=mid){  //if elements in i remai then we just copy it
+            temp[k++]=arr[i++];
+        }
+        while(j<=ei){//if elements in j remai then we just copy it
+            temp[k++]=arr[j++];
+        }
+        for (k=0,i=si;k<temp.length;k++,i++){ //we copy temp array to to original array
+            arr[i]=temp[k];
+        }
+    }
+    public static void main(String[] args) {
+        int arr[]={6,3,9,5,2};
+        mergesort(arr,0, arr.length-1);
+        prtarr(arr);
+    }
+}
