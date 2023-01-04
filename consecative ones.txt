@@ -1,0 +1,18 @@
+public class consecutive_one {
+    public static void binconse(int n, int lastplace, String str) {
+        if (n==0){
+            System.out.println(str);
+            return;
+        }
+        binconse(n-1,0,str+"0"); //ther is no such case in 0 we add 0 to string at both the cases
+        if (lastplace==0){ //if lastplace is 0 then only we put 1
+            binconse(n-1,1,str+"1");  //if on lastplace there is 0 then only we put 1 in string otherwise 0
+        }
+    }
+
+    public static void main(String[] args) {
+        int n=3;
+        binconse(n,0," ");
+    }
+}
+// this is concecative 1 problem in this problem 1 come after another 1 is restricted
